@@ -47,7 +47,7 @@ const [status, setStatus] = useState("Generating summary...");
 
     return (
       <section className="summary">
-        <img src={file.imageUrl} alt="Uploaded file preview" height="400px" width="400px"/>
+        <img src={file.imageUrl} alt="Uploaded file preview" height="300px" width="300px"/>
         <h2>Summary</h2>
         {status === "loading" ?
           <Loader /> :

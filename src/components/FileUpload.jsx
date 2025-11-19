@@ -7,7 +7,7 @@ async function handleFileUpload(event) {
     const file = {
         type: event.target.files[0].type,
         file: Buffer.from(fileUpload).toString("base64"),
-        imageUrl: event.target.files[0].type.includes("pdf") ? "/pdf.png" : URL.createObjectURL(event.target.files[0]),
+        imageUrl: event.target.files[0].type.includes("pdf") ? "/pdf-icon.png" : URL.createObjectURL(event.target.files[0]),
     };
     setFile(file);
 }
