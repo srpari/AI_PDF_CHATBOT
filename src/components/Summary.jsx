@@ -5,7 +5,7 @@ import  Loader  from "./Loader";
 
 function Summary({file}) {
 
-const ai = new GoogleGenAI({ apiKey: "AIzaSyDbDEXFUU_Evd9fz9TfmkFqOlWiKWZoGfU" });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GOOGLE_GEMINI_API_KEY });
 const [summary, setSummary] = useState("");
 const [status, setStatus] = useState("Generating summary...");
 
@@ -13,7 +13,11 @@ const [status, setStatus] = useState("Generating summary...");
      setStatus("loading");
      try{
         const contents = [
-        { text: "Summarize this document" },
+        { text:  `
+          Summarize the document
+          in one short paragraph (less than 100 words).
+          Use just plain text with no markdowns or html tags
+        `},
         {
             inlineData: {
                 mimeType: file.type,
