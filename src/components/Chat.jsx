@@ -18,11 +18,9 @@ function Chat({file}) {
              try{
         const contents = [
         { text:  
-            `
-            Answer this question about the attached document: ${inputMessage}.
+            `Answer this question about the attached document: ${inputMessage}.
             Answer as a chatbot with short messages and text only (no markdowns, tags or symbols)
-            Chat history: ${JSON.stringify(messages)}
-            `
+            Chat history: ${JSON.stringify(messages)}`
         },
         {
             inlineData: {
